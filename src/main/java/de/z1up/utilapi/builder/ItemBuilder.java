@@ -1,5 +1,7 @@
+// packages
 package de.z1up.utilapi.builder;
 
+// imports
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -12,10 +14,12 @@ import java.util.List;
 
 public class ItemBuilder {
 
+    // variables
     private ItemStack itemStack;
     private ItemMeta itemMeta;
     private SkullMeta skullMeta;
 
+    // constructors
     public ItemBuilder(Material material, Short id)
     {
         this.itemStack = new ItemStack(material, 1, id); this.itemMeta = this.itemStack.getItemMeta();
@@ -34,6 +38,14 @@ public class ItemBuilder {
         this.itemStack = new ItemStack(id, 1, subId); this.itemMeta = this.itemStack.getItemMeta();
     }
 
+    // methods
+
+    /**
+     * add a Enchantment to the ItemStack
+     * @param enchantment
+     * @param amount
+     * @return ItemBuilder
+     */
     public ItemBuilder addEnchantment(Enchantment enchantment, Integer amount)
     {
         if (this.itemMeta != null)
@@ -47,6 +59,11 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * add a ItemFlag to the ItemStack
+     * @param itemFlag
+     * @return ItemBuilder
+     */
     public ItemBuilder addItemFlag(ItemFlag itemFlag)
     {
         if (this.itemMeta != null)
@@ -60,6 +77,11 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * set the displayname of the ItemStack
+     * @param name
+     * @return ItemBuilder
+     */
     public ItemBuilder setDisplayName(String name)
     {
         if (this.itemMeta != null)
@@ -73,6 +95,11 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * set the lore of the ItemStack with a List
+     * @param loreName
+     * @return ItemBuilder
+     */
     public ItemBuilder setLore(String... loreName) {
         List<String> customLore = new ArrayList<String>();
         for (String Lore : loreName)
@@ -90,6 +117,10 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * finally builds the ItemStack
+     * @return itemStack
+     */
     public ItemStack build()
     {
         if (this.itemMeta != null)

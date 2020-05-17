@@ -90,6 +90,7 @@ public class UUIDFetcher {
         if (uuidCache.containsKey(name)) {
             return uuidCache.get(name);
         }
+
         try {
             HttpURLConnection connection =
                     (HttpURLConnection) new URL(String.format(UUID_URL, name, timestamp / 1000)).openConnection();
