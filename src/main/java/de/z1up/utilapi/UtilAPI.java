@@ -6,8 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Main class, runs methods onEnable and
- * onDisable
+ * Main class, runs methods onEnable an onDisable
  * @author z1up, chris23lngr
  */
 public class UtilAPI extends JavaPlugin {
