@@ -30,7 +30,7 @@ public class Reflections {
         return null;
     }
 
-    public static void sendPacket(Packet<?> packet,Player player){
+    public static void sendPacket(Packet<?> packet, Player player){
         ((CraftPlayer)player).getHandle().playerConnection.sendPacket(packet);
     }
 

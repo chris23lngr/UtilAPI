@@ -37,53 +37,41 @@ public class UUIDFetcher {
     // methods
 
     /**
-     * check if player exists
+     * Checks if a player exists by theire username.
      *
-     * @param name
-     * @return
+     * @param name The name of the player that needs to be checked.
+     * @return If player exists or not.
      */
     public static boolean existsPlayer(String name) {
         return getUUID(name) != null;
     }
 
     /**
-     * get uuid of player by name with consumer
+     * Checks if a player exists by theire username.
      *
-     * @param name
-     * @param action
+     * @param uuid The UUID of the player that needs to be checked.
+     * @return If player exists or not.
      */
-    public static void getUUID(String name, Consumer<UUID> action) {
-        pool.execute(() -> action.accept(getUUID(name)));
+    public static boolean existsPlayer(UUID uuid) {
+        return getName(uuid) != null;
     }
 
     /**
-     * get uuid of player by name
+     * Returns the UUID of the playername.
      *
-     * @param name
-     * @return
+     * @param name The name of the player, whos UUID will be returned.
      */
     public static UUID getUUID(String name) {
         return getUUIDAt(name, System.currentTimeMillis());
     }
 
     /**
-     * get uuid of player at timestamp by consumer
+     * Returns the UUID of a player at a specific timestamp, useful to
+     * align usernames and UUIDs from the past.
      *
-     * @param name
-     * @param timestamp
-     * @param action
-     */
-    public static void getUUIDAt(String name, long timestamp, Consumer<UUID> action) {
-        pool.execute(() -> action.accept(getUUIDAt(name, timestamp)));
-    }
-
-
-    /**
-     * get uuid of player at timestamp
-     *
-     * @param name
-     * @param timestamp
-     * @return
+     * @param name The name of the player.
+     * @param timestamp The timestamp of when the UUID was connected to the playername.
+     * @return The UUID at the specific timestamp.
      */
     public static UUID getUUIDAt(String name, long timestamp) {
         name = name.toLowerCase();
@@ -113,20 +101,10 @@ public class UUIDFetcher {
     }
 
     /**
-     * get the name by consumer
+     * Returns the name of a player by their UUID.
      *
-     * @param uuid
-     * @param action
-     */
-    public static void getName(UUID uuid, Consumer<String> action) {
-        pool.execute(() -> action.accept(getName(uuid)));
-    }
-
-    /**
-     * get the current name of a player
-     *
-     * @param uuid
-     * @return
+     * @param uuid The UUID of the player whos name needs to be checked.
+     * @return The UUID of the checked player.
      */
     public static String getName(UUID uuid) {
         if (nameCache.containsKey(uuid)) {

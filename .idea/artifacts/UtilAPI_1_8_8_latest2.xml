@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UtilAPI-1.8.8-latest2">
+    <output-path>$PROJECT_DIR$/out/artifacts/UtilAPI_1_8_8_latest2</output-path>
+    <root id="archive" name="UtilAPI-1.8.8-latest2.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+      <element id="module-output" name="UtilAPI" />
+    </root>
+  </artifact>
+</component>

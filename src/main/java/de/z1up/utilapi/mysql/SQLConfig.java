@@ -1,4 +1,4 @@
-package de.z1up.zspigot.mysql;
+package de.z1up.utilapi.mysql;
 
 // imports
 import java.io.File;

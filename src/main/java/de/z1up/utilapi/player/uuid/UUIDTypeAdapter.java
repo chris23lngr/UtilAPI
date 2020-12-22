@@ -11,7 +11,6 @@ import java.util.UUID;
 
 /**
  * TypeAdapter to read UUID
- * @implNote TypeAdapter of type UUID
  */
 public class UUIDTypeAdapter extends TypeAdapter<UUID> {
 
@@ -29,16 +28,16 @@ public class UUIDTypeAdapter extends TypeAdapter<UUID> {
     // methods
 
     /**
-     * rewrites UUID by UUID
-     * @param value
-     * @return
+     * Shortens the long UUID and returns it as a String.
+     * @param value The long UUID.
+     * @return The shorted UUID as String.
      */
     public static String fromUUID(UUID value) {
         return value.toString().replace("-", "");
     }
 
     /**
-     * rewrites UUID by String
+     * Replaces the shorted UUID with a
      * @param input
      * @return
      */

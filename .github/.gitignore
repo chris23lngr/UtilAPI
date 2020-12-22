@@ -1,0 +1,8 @@
+*.xml
+target
+/target
+out
+/out
+*.iml
+.idea
+*.idea
